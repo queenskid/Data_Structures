@@ -8,7 +8,6 @@ namespace CodeChallenges.Week_02
     {
         public SLLNode Head = new SLLNode();
 
-        // Adding int value to the first position in a LinkedList
         public void AddFirst(int value)
         {
             SLLNode newNode = new SLLNode { Value = value };
@@ -22,7 +21,6 @@ namespace CodeChallenges.Week_02
             return;
         }
 
-        // Add int to the Last positing in a Linked List
         public void AddLast(int value)
         {
             SLLNode newNode = new SLLNode();
@@ -42,7 +40,6 @@ namespace CodeChallenges.Week_02
             current.Next = newNode;
         }
 
-        // Add a value before a targeted-value if found, otherwise print out a message and return
         public void AddBefore(int value, int targetedValue)
         {
             if (Head == null)
@@ -79,7 +76,7 @@ namespace CodeChallenges.Week_02
             }
         }
 
-        // Add a value before a targeted-value if found, otherwise print out a message and return
+        
         public void AddAfter(int value, int targetedValue)
         {
             if (Head == null)
@@ -111,9 +108,41 @@ namespace CodeChallenges.Week_02
                     current = current.Next;
                     previous = previous.Next;
                 }
-                Console.WriteLine("Targeted value is not found!");
+            }
+            Console.WriteLine("Targeted value is not found!");
+        }
+        
+        public void RemoveNode(int targetedValue)
+        {
+            if (Head != null)
+            {
+                Console.WriteLine("Head is not found");
                 return;
             }
+
+            if (Head.Value == targetedValue)
+            {
+                Head = Head.Next;
+                return;
+            }
+            if (Head.Next != null)
+            {
+                SLLNode current = Head.Next;
+                SLLNode prev = Head;
+                while (current != null)
+                {
+                    if (current.Value == targetedValue)
+                    {
+                        SLLNode temp = current.Next;
+                        current = null;
+                        prev.Next = temp;
+                        return;
+                    }
+                    current = current.Next;
+                    prev = prev.Next;
+                }
+            }
+            Console.WriteLine("value not found!");
         }
     }
 }
