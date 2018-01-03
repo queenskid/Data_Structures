@@ -76,7 +76,7 @@ namespace CodeChallenges.Week_02
             }
         }
 
-        
+
         public void AddAfter(int value, int targetedValue)
         {
             if (Head == null)
@@ -111,7 +111,7 @@ namespace CodeChallenges.Week_02
             }
             Console.WriteLine("Targeted value is not found!");
         }
-        
+
         public void RemoveNode(int targetedValue)
         {
             if (Head != null)
@@ -142,7 +142,24 @@ namespace CodeChallenges.Week_02
                     prev = prev.Next;
                 }
             }
+
             Console.WriteLine("value not found!");
         }
-    }
+
+        public SLLNode FindMiddle()
+        {
+            SLLNode midNode = Head;
+            SLLNode lastNode = Head;
+
+            while (lastNode.Next != null && lastNode.Next.Next != null)
+            {
+                midNode = midNode.Next;
+                lastNode = lastNode.Next.Next;
+                Console.WriteLine($"{midNode} is the middle value for the SLL");
+            }
+
+            return midNode;
+            
+        }
+    }    
 }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodeChallenges.Week_02
+namespace LInkedList
 {
-    public class SLLNode
+    class Program
     {
-        public int Value;
-        public SLLNode Next;
+        static void Main(string[] args)
+        {
+
+        }
     }
 }
