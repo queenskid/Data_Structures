@@ -146,6 +146,7 @@ namespace CodeChallenges.Week_02
             Console.WriteLine("value not found!");
         }
 
+        //find middle node by having a walker and runner node and having them move certaij positions. once runner node has found value of null, the walker node will be at location needed. 
         public SLLNode FindMiddle()
         {
             SLLNode midNode = Head;
@@ -159,7 +160,26 @@ namespace CodeChallenges.Week_02
             }
 
             return midNode;
-            
+
         }
-    }    
+
+        //find Nth from the end
+        public SLLNode FindNthFromLast(int n)
+        {
+            SLLNode walker = Head;
+            SLLNode sleeper = Head;
+            int counter = 1;
+
+            while (walker.Next != null)
+            {
+                if (counter >= n)
+                {
+                    sleeper = sleeper.Next;
+                }
+                walker = walker.Next;
+                counter++;
+            }
+            return sleeper;
+        }
+    }
 }
