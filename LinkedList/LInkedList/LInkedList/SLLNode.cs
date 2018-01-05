@@ -8,5 +8,6 @@ namespace CodeChallenges.Week_02
     {
         public int Value;
         public SLLNode Next;
+        public SLLNode Prev;
     }
 }

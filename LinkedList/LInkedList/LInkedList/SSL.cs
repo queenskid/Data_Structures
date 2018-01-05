@@ -178,6 +178,7 @@ namespace CodeChallenges.Week_02
                 }
                 walker = walker.Next;
                 counter++;
+                Console.WriteLine("");
             }
             return sleeper;
         }
