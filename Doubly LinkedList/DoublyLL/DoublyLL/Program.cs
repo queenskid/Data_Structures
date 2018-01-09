@@ -9,8 +9,6 @@ namespace DoublyLL
             Console.WriteLine("Hello World!");
 
             Methods dll = new Methods(1);
-
-
         }
 
 

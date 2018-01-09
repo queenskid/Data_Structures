@@ -10,7 +10,7 @@ namespace DoublyLL
         public Node Runner { get; set; }
         private int Counter { get; set; }
 
-        public Methods(object value)
+        public Methods(Node node)
         {
             //Node node = new Node { Value = value, Previous = null, Next = null}:
             Head = node;
