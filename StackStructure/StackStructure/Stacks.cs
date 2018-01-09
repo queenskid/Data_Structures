@@ -30,8 +30,14 @@ namespace StackStructure
                 Current = Current.Next;
             }
             Current.Next = Current.Next.Next;
-            RemoveTop.Next = null;
+            RemoveTop.Next = null;            
             ListSize--;
+            return;
+        }
+
+        public int Peek()
+        {
+            return Head.Value;
         }
 
 
