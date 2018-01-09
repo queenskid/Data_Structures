@@ -7,6 +7,12 @@ namespace DoublyLL
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Methods dll = new Methods(1);
+
+
         }
+
+
     }
 }

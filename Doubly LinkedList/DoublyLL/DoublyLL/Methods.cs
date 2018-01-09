@@ -7,11 +7,14 @@ namespace DoublyLL
     class Methods
     {
         public Node Head { get; set; }
+        public Node Runner { get; set; }
         private int Counter { get; set; }
 
-        public Methods(Node node)
+        public Methods(object value)
         {
+            //Node node = new Node { Value = value, Previous = null, Next = null}:
             Head = node;
+            Runner = Head;
             Counter = 1;
         }
 
@@ -42,13 +45,13 @@ namespace DoublyLL
             }
             else
             {
-                Node Current = Head;
-                while (Current.Next != null)
+                Node Runner = Head;
+                while (Runner.Next != null)
                 {
-                    Current = Current.Next;
+                    Runner = Runner.Next;
                 }
-                Current.Next = newNode;
-                Current.Next.Prev = Current;
+                Runner.Next = newNode;
+                Runner.Next.Prev = Runner;
             }
             Counter++;
         }
@@ -58,21 +61,21 @@ namespace DoublyLL
         public void AddBefore(Node targetNode, Node newNode)
         {
             if (Head == null) return;
-            Node Current = Head;
-            while (Current.Next != targetNode)
+            Node Runner = Head;
+            while (Runner.Next != targetNode)
             {
-                if (Current.Next != null)
+                if (Runner.Next != null)
                 {
-                    Current = Current.Next;
+                    Runner = Runner.Next;
                 }
                 else
                     return;
             }
 
-            newNode.Next = Current.Next;
-            Current.Next.Prev = newNode;
-            Current.Next = newNode;
-            newNode.Prev = Current;
+            newNode.Next = Runner.Next;
+            Runner.Next.Prev = newNode;
+            Runner.Next = newNode;
+            newNode.Prev = Runner;
             Counter++;
         }
 
@@ -80,21 +83,21 @@ namespace DoublyLL
         public void AddAfter(Node targetNode, Node newNode)
         {
             if (Head == null) return;
-            Node Current = Head;
+            Node Runner = Head;
 
-            while (Current != targetNode)
+            while (Runner != targetNode)
             {
-                if (Current.Next != null)
+                if (Runner.Next != null)
                 {
-                    Current = Current.Next;
+                    Runner = Runner.Next;
                 }
                 else
                     return;
             }
-            newNode.Next = Current.Next;
-            Current.Next.Prev = newNode;
-            Current.Next = newNode;
-            newNode.Prev = Current;
+            newNode.Next = Runner.Next;
+            Runner.Next.Prev = newNode;
+            Runner.Next = newNode;
+            newNode.Prev = Runner;
             Counter++;
         }
 
@@ -103,13 +106,13 @@ namespace DoublyLL
         {
             if (Head == null)
                 return;
-            Node Current = Head;
+            Node Runner = Head;
 
-            while (Current != targetNode)
+            while (Runner != targetNode)
             {
-                if (Current.Next != null)
+                if (Runner.Next != null)
                 {
-                    Current = Current.Next;
+                    Runner = Runner.Next;
                 }
                 else
                     return;
@@ -118,21 +121,21 @@ namespace DoublyLL
             if (Counter == 1)
                 Head = null;
 
-            else if (Current.Prev == null)
+            else if (Runner.Prev == null)
             {
-                Head = Current.Next;
-                Current.Next.Prev = null;
+                Head = Runner.Next;
+                Runner.Next.Prev = null;
             }
-            else if (Current.Next == null)
+            else if (Runner.Next == null)
             {
-                Current.Prev.Next = null;
+                Runner.Prev.Next = null;
             }
             else
             {
-                Current.Prev.Next = Current.Next;
-                Current.Next.Prev = Current.Prev;
+                Runner.Prev.Next = Runner.Next;
+                Runner.Next.Prev = Runner.Prev;
             }
-            Current = null;
+            Runner = null;
             Counter--;
         }
     }
