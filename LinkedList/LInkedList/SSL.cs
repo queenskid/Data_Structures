@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodeChallenges.Week_02
+namespace LInkedList
 {
     public class SLL
     {
@@ -24,6 +24,7 @@ namespace CodeChallenges.Week_02
         public void AddLast(int value)
         {
             SLLNode newNode = new SLLNode();
+            newNode.Value = value;
             if (Head == null)
             {
                 Head = newNode;
@@ -36,7 +37,6 @@ namespace CodeChallenges.Week_02
             {
                 current = current.Next;
             }
-
             current.Next = newNode;
         }
 
@@ -49,6 +49,8 @@ namespace CodeChallenges.Week_02
             }
 
             SLLNode newNode = new SLLNode();
+            newNode.Value = value;
+
             if (Head.Value == targetedValue)
             {
                 newNode.Next = Head;
@@ -72,7 +74,6 @@ namespace CodeChallenges.Week_02
                     previous = previous.Next;
                 }
                 Console.WriteLine("Targeted value is not found!");
-                return;
             }
         }
 
