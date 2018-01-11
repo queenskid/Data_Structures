@@ -14,5 +14,18 @@ namespace StacksAndQueue
             Head = new Node(n);
             Tail = Head;
         }
+
+        public void Dequeue()
+        {
+            if (Head == Tail)
+            {
+                Head = null;
+                Tail = null;
+            }
+            else
+            {
+                Head = Head?.Prev;
+            }
+        }
     }
 }
