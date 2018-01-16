@@ -7,19 +7,23 @@ namespace Matching_Symbols
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!\n");
+            Console.WriteLine("Hello World!");
+            Console.WriteLine();
 
             Console.WriteLine("(){}(){}");
-            if (Challenge("(){}(){}")) Console.WriteLine("True!\n");
-            else Console.WriteLine("False!\n");
+            if (Challenge("(){}(){}")) Console.WriteLine("True!");
+            else Console.WriteLine("False!");
+            Console.WriteLine();
 
             Console.WriteLine("({(({}))})");
-            if (Challenge("({(({}))})")) Console.WriteLine("True!\n");
-            else Console.WriteLine("False!\n");
+            if (Challenge("({(({}))})")) Console.WriteLine("True!");
+            else Console.WriteLine("False!");
+            Console.WriteLine();
 
             Console.WriteLine("{{({)})}}");
-            if (Challenge("{{({)})}}")) Console.WriteLine("True!\n");
-            else Console.WriteLine("False!\n");
+            if (Challenge("{{({)})}}")) Console.WriteLine("True!");
+            else Console.WriteLine("False!");
+            Console.WriteLine();
 
             Console.ReadLine();
         }
