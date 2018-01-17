@@ -6,11 +6,11 @@ namespace TreeTraversal
 {
     class Tree
     {
-        public Node root;
+        public Node root { get; set; }
 
         public Tree()
         {
-            root = null;
+            
         }
 
         public Node ReturnRoot()
@@ -19,7 +19,7 @@ namespace TreeTraversal
         }
 
 
-        public void Insert(char i)
+        public void Insert(int i)
         {
             Node newNode = new Node();
             newNode.value = i;
@@ -53,17 +53,7 @@ namespace TreeTraversal
                 }
             }
         }
-
-        public void Preorder(Node Root)
-        {
-            if (Root != null)
-            {
-                Console.Write(Root.value + " ");
-                Preorder(Root.left);
-                Preorder(Root.right);
-            }
-        }
-
+        
 
         public void Inorder(Node Root)
         {
@@ -72,6 +62,16 @@ namespace TreeTraversal
                 Inorder(Root.left);
                 Console.Write(Root.value + " ");
                 Inorder(Root.right);
+            }
+        }
+
+        public void Preorder(Node Root)
+        {
+            if (Root != null)
+            {
+                Console.Write(Root.value + " ");
+                Preorder(Root.left);
+                Preorder(Root.right);
             }
         }
 

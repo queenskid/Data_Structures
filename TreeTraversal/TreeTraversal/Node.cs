@@ -6,10 +6,13 @@ namespace TreeTraversal
 {
     class Node
     {
+
         public int value;
         public Node left;
         public Node right;
-        public void display()
+
+
+        public void Print()
         {
             Console.Write("(");
             Console.Write(value);
