@@ -10,7 +10,7 @@ namespace TreeTraversal
 
         public Tree()
         {
-            
+            root = null;
         }
 
         public Node ReturnRoot()
