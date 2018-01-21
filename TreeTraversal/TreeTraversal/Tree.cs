@@ -6,62 +6,41 @@ namespace TreeTraversal
 {
     class Tree
     {
-        public Node root { get; set; }
+        public Node Root { get; set; }
 
         public Tree()
         {
-            root = null;
+            Root = null;
         }
 
         public Node ReturnRoot()
         {
-            return root;
+            return Root;
         }
 
 
-        public void Insert(int i)
+        public object AddFirst(object Value)
         {
-            Node newNode = new Node();
-            newNode.value = i;
-            if (root == null)
-                root = newNode;
+            if (Root == null)
+            {
+                Root = new Node(Value);
+                return Root.Value;
+            }
             else
             {
-                Node current = root;
-                Node parent;
-                while (true)
-                {
-                    parent = current;
-                    if (i < current.value)
-                    {
-                        current = current.left;
-                        if (current == null)
-                        {
-                            parent.left = newNode;
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        current = current.right;
-                        if (current == null)
-                        {
-                            parent.right = newNode;
-                            return;
-                        }
-                    }
-                }
+                Console.WriteLine("Tree already has a root");
+                return null;
             }
         }
-        
+
 
         public void Inorder(Node Root)
         {
             if (Root != null)
             {
-                Inorder(Root.left);
-                Console.Write(Root.value + " ");
-                Inorder(Root.right);
+                Inorder(Root.Left);
+                Console.Write(Root.Value + " ");
+                Inorder(Root.Right);
             }
         }
 
@@ -69,9 +48,9 @@ namespace TreeTraversal
         {
             if (Root != null)
             {
-                Console.Write(Root.value + " ");
-                Preorder(Root.left);
-                Preorder(Root.right);
+                Console.Write(Root.Value + " ");
+                Preorder(Root.Left);
+                Preorder(Root.Right);
             }
         }
 
@@ -80,9 +59,9 @@ namespace TreeTraversal
         {
             if (Root != null)
             {
-                Postorder(Root.left);
-                Postorder(Root.right);
-                Console.Write(Root.value + " ");
+                Postorder(Root.Left);
+                Postorder(Root.Right);
+                Console.Write(Root.Value + " ");
             }
         }
     }

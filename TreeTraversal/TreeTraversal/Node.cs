@@ -6,18 +6,23 @@ namespace TreeTraversal
 {
     class Node
     {
+        public object Value { get; set; }
+        public Node Left { get; set; }
+        public Node Right { get; set; }
 
-        public int value;
-        public Node left;
-        public Node right;
-
+        public Node(object data)
+        {
+            Value = data;
+        }
 
         public void Print()
         {
             Console.Write("(");
-            Console.Write(value);
+            Console.Write(Value);
             Console.Write(")");
 
         }
+
+       
     }
 }
